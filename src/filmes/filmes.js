@@ -3,22 +3,22 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 class Filmes extends Component{
   render(){
-    const {nome, foto} = this.props.data;
+    const {id, name, ra, curso, periodo, disciplina} = this.props.data;
     return(
       <View>
         
         <View style={styles.card}>
-          <Text style={styles.titulo}>{nome}</Text>
-          <Image
-          source={{ uri: foto }}
-          style={styles.capa}
-          />
-
-          <View style={styles.Areabotao}>
+        <Text style={styles.titulo}>{id}</Text>
+        <Text style={styles.titulo}>{name}</Text>
+        <Text style={styles.titulo}>{ra}</Text>
+        <Text style={styles.titulo}>{curso}</Text>
+        <Text style={styles.titulo}>{periodo}</Text>  
+        <Text style={styles.titulo}>{disciplina}</Text>
+          {/* <View style={styles.Areabotao}>
             <TouchableOpacity style={styles.botao} onPress={()=> alert(nome)}>
               <Text style={styles.botaoTexto}>LEIA MAIS</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
 
       </View>
@@ -40,10 +40,6 @@ const styles = StyleSheet.create({
   titulo:{
     fontSize: 18,
     padding: 15,
-  },
-  capa:{
-    height: 250,
-    zIndex: 2,
   },
   Areabotao:{
     alignItems: 'flex-end',

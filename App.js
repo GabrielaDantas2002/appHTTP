@@ -15,11 +15,13 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    const response = await api.get('r-api/?api=filmes');
+    const response = await api.get('b/62900e3b449a1f3821f0a49c/1');
     this.setState({
-      filmes: response.data,
+      filmes: response.data[0].aluno,
       loading: false
     });
+
+    console.log(response.data)
   }
 
   render() {
